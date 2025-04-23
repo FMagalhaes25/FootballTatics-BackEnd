@@ -29,6 +29,7 @@ class Jogador(models.Model):
     idade = models.IntegerField()
     altura = models.DecimalField(max_digits=4, decimal_places=2)
     peso = models.DecimalField(max_digits=5, decimal_places=2)
+    perna_boa = models.CharField(max_length=3, choices=[('DIR', 'Direita'), ('ESQ', 'Esquerda')])
     posicao = models.CharField(
         max_length=3,
         choices=Posicao.choices,
