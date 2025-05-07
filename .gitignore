@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.DS_Store
+
 # C extensions
 *.so
 
@@ -174,3 +176,11 @@ cython_debug/
 
 .vscode/
 .idea/
+
+
+# Deep learning model .gitignore
+
+deep_learning_model/deep_learning_venv
+deep_learning_model/README.md
+deep_learning_model/data/
+DS_Store

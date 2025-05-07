@@ -6,7 +6,6 @@ tensorflow
 numpy
 matplotlib
 seaborn
-scikit-learn
 tensorflow
 scipy
 tensor
