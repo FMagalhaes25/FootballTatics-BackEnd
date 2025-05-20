@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Elenco, Jogador
+from .models import Elenco, Jogador, User
 
 
 class ElencoSerializer(serializers.ModelSerializer):
@@ -35,3 +35,21 @@ class JogadorSerializer(serializers.ModelSerializer):
                 })
 
         return data
+    
+    
+class UserRegisterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User  # <-- Certifique-se que é o seu modelo customizado
+        fields = ['id', 'name', 'email', 'password', 'phone']
+        extra_kwargs = {
+            'password': {'write_only': True}
+        }
+
+    def create(self, validated_data):
+        user = User.objects.create_user(
+            email=validated_data['email'],
+            name=validated_data.get('name', ''),
+            phone=validated_data.get('phone', ''),
+            password=validated_data['password']
+        )
+        return user
