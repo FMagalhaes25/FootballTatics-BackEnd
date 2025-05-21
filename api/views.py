@@ -4,7 +4,7 @@ from .models import Elenco, Jogador
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import ElencoSerializer, JogadorSerializer, UserRegisterSerializer
+from .serializers import ElencoSerializer, JogadorSerializer, UserRegisterSerializer, UserMeSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 from .filters import ElencoFilter, JogadorFilter
 from rest_framework.permissions import IsAuthenticated
@@ -39,11 +39,12 @@ class JogadorViewSet(viewsets.ModelViewSet):
         return Jogador.objects.filter(elenco__tecnico=self.request.user)
 
     def perform_create(self, serializer):
-        elenco_id = self.request.data.get('elenco')
-        if not Elenco.objects.filter(id=elenco_id, tecnico=self.request.user).exists():
-            raise serializers.ValidationError("Você não tem permissão para adicionar jogador neste elenco.")
+        try:
+            elenco = Elenco.objects.get(tecnico=self.request.user)
+        except Elenco.DoesNotExist:
+            raise serializers.ValidationError("Usuário não possui elenco cadastrado.")
         
-        serializer.save(elenco_id=elenco_id) 
+        serializer.save(elenco=elenco)
 
 
 class RegisterView(APIView):
@@ -53,3 +54,11 @@ class RegisterView(APIView):
             user = serializer.save()
             return Response({"message": "Usuário registrado com sucesso"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    
+class UserMeView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        serializer = UserMeSerializer(request.user)
+        return Response(serializer.data)

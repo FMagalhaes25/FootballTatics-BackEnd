@@ -12,6 +12,9 @@ class JogadorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Jogador
         fields = '__all__'
+        extra_kwargs = {
+            'elenco': {'required': False},  
+        }
 
     #Validação para que o número da camisa seja único dentro do elenco e que os atributos do jogador sejam entre 0-10
     def validate(self, data):
@@ -38,18 +41,48 @@ class JogadorSerializer(serializers.ModelSerializer):
     
     
 class UserRegisterSerializer(serializers.ModelSerializer):
+    team_name = serializers.CharField(write_only=True)
+    confirm_password = serializers.CharField(write_only=True)
+
     class Meta:
-        model = User  # <-- Certifique-se que é o seu modelo customizado
-        fields = ['id', 'name', 'email', 'password', 'phone']
+        model = User
+        fields = ['id', 'name', 'email', 'phone', 'password', 'confirm_password', 'team_name']
         extra_kwargs = {
-            'password': {'write_only': True}
+            'password': {'write_only': True},
         }
 
+    def validate(self, attrs):
+        if attrs['password'] != attrs['confirm_password']:
+            raise serializers.ValidationError({"confirm_password": "As senhas não coincidem."})
+        return attrs
+
     def create(self, validated_data):
+        validated_data.pop('confirm_password') 
+        team_name = validated_data.pop('team_name')
+
         user = User.objects.create_user(
             email=validated_data['email'],
             name=validated_data.get('name', ''),
             phone=validated_data.get('phone', ''),
             password=validated_data['password']
         )
+
+        Elenco.objects.create(nome=team_name, tecnico=user)
         return user
+    
+    
+class UserMeSerializer(serializers.ModelSerializer):
+    team = serializers.SerializerMethodField()
+    elenco = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = ['id', 'name', 'email', 'phone', 'elenco', 'team']
+
+    def get_team(self, obj):
+        elenco = Elenco.objects.filter(tecnico=obj).first()
+        return elenco.nome if elenco else None
+    
+    def get_elenco(self, obj):
+        elenco = Elenco.objects.filter(tecnico=obj).first()
+        return elenco.id if elenco else None

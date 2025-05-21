@@ -29,15 +29,15 @@ class Posicao(models.TextChoices):
 class Jogador(models.Model):
     nome = models.CharField(max_length=100)
     idade = models.IntegerField()
-    altura = models.DecimalField(max_digits=4, decimal_places=2)
-    peso = models.DecimalField(max_digits=5, decimal_places=2)
+    altura = models.IntegerField()
+    peso = models.IntegerField()
     perna_boa = models.CharField(max_length=3, choices=[('DIR', 'Direita'), ('ESQ', 'Esquerda')])
     posicao = models.CharField(
         max_length=3,
         choices=Posicao.choices,
         default=Posicao.CENTRO_AVANTE,
     )
-    camisa = models.IntegerField()
+    camisa = models.DecimalField(max_digits=2, decimal_places=0)
     velocidade = models.IntegerField()
     chute = models.IntegerField()
     passe = models.IntegerField()

@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from api.views import ElencoViewSet, JogadorViewSet, RegisterView
+from api.views import ElencoViewSet, JogadorViewSet, RegisterView, UserMeView
 from django.contrib.auth import views as auth_views
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -35,6 +35,7 @@ urlpatterns = [
 
     # Cadastro de usuário 
     path('register/', RegisterView.as_view(), name='register'),
+    path('me/', UserMeView.as_view(), name='user-me'),
 
     # Swagger UI
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
