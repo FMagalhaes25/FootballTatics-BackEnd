@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Elenco, Jogador, User
+from .models import Elenco, Jogador, User, Formacao, FormacaoEscolhida
+import json
 
 
 class ElencoSerializer(serializers.ModelSerializer):
@@ -86,3 +87,25 @@ class UserMeSerializer(serializers.ModelSerializer):
     def get_elenco(self, obj):
         elenco = Elenco.objects.filter(tecnico=obj).first()
         return elenco.id if elenco else None
+    
+    
+class FormacaoSerializer(serializers.ModelSerializer):
+    posicoes = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Formacao
+        fields = '__all__'
+
+    def get_posicoes(self, obj):
+        try:
+            return json.loads(obj.posicoes)
+        except json.JSONDecodeError:
+            return []
+        
+        
+class FormacaoEscolhidaSerializer(serializers.ModelSerializer):
+    formacao = FormacaoSerializer()
+
+    class Meta:
+        model = FormacaoEscolhida
+        fields = ['formacao']
