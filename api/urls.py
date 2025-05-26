@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from api.views import ElencoViewSet, JogadorViewSet, RegisterView, UserMeView
+from api.views import ElencoViewSet, JogadorViewSet, RegisterView, UserMeView, FormacaoViewSet, SalvarFormacaoView, FormacaoEscolhidaView
 from django.contrib.auth import views as auth_views
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -24,6 +24,7 @@ schema_view = get_schema_view(
 router = DefaultRouter()
 router.register(r'elenco', ElencoViewSet, basename='elenco')
 router.register(r'jogador', JogadorViewSet, basename='jogador')
+router.register(r'formacoes', FormacaoViewSet, basename='formacao')
 
 urlpatterns = [
     # API REST
@@ -45,4 +46,7 @@ urlpatterns = [
     path('password/reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     path('password/reset/confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('password/reset/complete/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    
+    path('salvar-formacao/', SalvarFormacaoView.as_view(), name='salvar-formacao'),
+    path('formacao-escolhida/', FormacaoEscolhidaView.as_view(), name='formacao-escolhida'),
 ]

@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from uuid import uuid4
 from django.contrib.auth.models import (AbstractUser, PermissionsMixin, BaseUserManager)
+from django.contrib.postgres.fields import ArrayField
 
 # Create your models here.
 class Elenco(models.Model):
@@ -11,7 +12,6 @@ class Elenco(models.Model):
     def __str__(self):
         return self.nome
 
-    
     
 class Posicao(models.TextChoices):
     GOLEIRO = 'GOL', 'Goleiro'
@@ -80,7 +80,6 @@ class User(AbstractUser, PermissionsMixin):
     password = models.CharField(max_length=128, verbose_name="Senha do usuário")
     phone = models.CharField(max_length=15, blank=True, null=True, verbose_name="Telefone do usuário")
     
-
     is_active = models.BooleanField(default=True, verbose_name="Usuário ativo")
     is_staff = models.BooleanField(default=False, verbose_name="Usuário staff")
     is_superuser = models.BooleanField(default=False, verbose_name="Usuário superuser")
@@ -98,3 +97,31 @@ class User(AbstractUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+
+class Formacao(models.Model):
+    CATEGORIAS = [
+        ('Defensivas', 'Defensivas'),
+        ('Equilibradas', 'Equilibradas'),
+        ('Ofensivas', 'Ofensivas'),
+        ('Especiais', 'Especiais'),
+    ]
+
+    nome = models.CharField(max_length=100)
+    estilo = models.CharField(max_length=50)
+    dificuldade = models.PositiveIntegerField()
+    descricao = models.TextField()
+    categoria = models.CharField(max_length=50)
+    posicoes = models.TextField()
+
+    def __str__(self):
+        return self.nome
+    
+    
+class FormacaoEscolhida(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="formacao_escolhida")
+    formacao = models.ForeignKey(Formacao, on_delete=models.CASCADE)
+    data_escolha = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.user.email} - {self.formacao.nome}"
