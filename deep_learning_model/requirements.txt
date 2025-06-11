@@ -1,0 +1,182 @@
+[
+  {
+    "model": "api.formacao",
+    "pk": 1,
+    "fields": {
+      "nome": "5-4-1",
+      "estilo": "Muito Defensiva",
+      "dificuldade": 2,
+      "descricao": "Formação ultra defensiva com 5 defensores",
+      "categoria": "Defensivas",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 10, \"y\": 25}, {\"x\": 30, \"y\": 20}, {\"x\": 50, \"y\": 15}, {\"x\": 70, \"y\": 20}, {\"x\": 90, \"y\": 25}, {\"x\": 20, \"y\": 50}, {\"x\": 40, \"y\": 55}, {\"x\": 60, \"y\": 55}, {\"x\": 80, \"y\": 50}, {\"x\": 50, \"y\": 85}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 2,
+    "fields": {
+      "nome": "5-3-2",
+      "estilo": "Defensiva",
+      "dificuldade": 3,
+      "descricao": "Formação defensiva com alas",
+      "categoria": "Defensivas",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 10, \"y\": 25}, {\"x\": 30, \"y\": 20}, {\"x\": 50, \"y\": 15}, {\"x\": 70, \"y\": 20}, {\"x\": 90, \"y\": 25}, {\"x\": 30, \"y\": 50}, {\"x\": 50, \"y\": 55}, {\"x\": 70, \"y\": 50}, {\"x\": 35, \"y\": 85}, {\"x\": 65, \"y\": 85}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 3,
+    "fields": {
+      "nome": "4-5-1",
+      "estilo": "Defensiva",
+      "dificuldade": 2,
+      "descricao": "Formação defensiva com meio-campo reforçado",
+      "categoria": "Defensivas",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 15, \"y\": 25}, {\"x\": 35, \"y\": 20}, {\"x\": 65, \"y\": 20}, {\"x\": 85, \"y\": 25}, {\"x\": 15, \"y\": 50}, {\"x\": 35, \"y\": 55}, {\"x\": 50, \"y\": 60}, {\"x\": 65, \"y\": 55}, {\"x\": 85, \"y\": 50}, {\"x\": 50, \"y\": 85}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 4,
+    "fields": {
+      "nome": "4-4-2",
+      "estilo": "Equilibrada",
+      "dificuldade": 1,
+      "descricao": "Formação clássica e equilibrada",
+      "categoria": "Equilibradas",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 15, \"y\": 25}, {\"x\": 35, \"y\": 20}, {\"x\": 65, \"y\": 20}, {\"x\": 85, \"y\": 25}, {\"x\": 20, \"y\": 50}, {\"x\": 40, \"y\": 55}, {\"x\": 60, \"y\": 55}, {\"x\": 80, \"y\": 50}, {\"x\": 35, \"y\": 85}, {\"x\": 65, \"y\": 85}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 5,
+    "fields": {
+      "nome": "4-3-3",
+      "estilo": "Equilibrada",
+      "dificuldade": 2,
+      "descricao": "Formação versátil com três atacantes",
+      "categoria": "Equilibradas",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 15, \"y\": 25}, {\"x\": 35, \"y\": 20}, {\"x\": 65, \"y\": 20}, {\"x\": 85, \"y\": 25}, {\"x\": 30, \"y\": 50}, {\"x\": 50, \"y\": 55}, {\"x\": 70, \"y\": 50}, {\"x\": 20, \"y\": 85}, {\"x\": 50, \"y\": 90}, {\"x\": 80, \"y\": 85}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 6,
+    "fields": {
+      "nome": "4-2-3-1",
+      "estilo": "Equilibrada",
+      "dificuldade": 3,
+      "descricao": "Formação moderna com dois volantes",
+      "categoria": "Equilibradas",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 15, \"y\": 25}, {\"x\": 35, \"y\": 20}, {\"x\": 65, \"y\": 20}, {\"x\": 85, \"y\": 25}, {\"x\": 35, \"y\": 45}, {\"x\": 65, \"y\": 45}, {\"x\": 20, \"y\": 70}, {\"x\": 50, \"y\": 75}, {\"x\": 80, \"y\": 70}, {\"x\": 50, \"y\": 90}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 7,
+    "fields": {
+      "nome": "4-1-4-1",
+      "estilo": "Equilibrada",
+      "dificuldade": 3,
+      "descricao": "Formação com volante de contenção",
+      "categoria": "Equilibradas",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 15, \"y\": 25}, {\"x\": 35, \"y\": 20}, {\"x\": 65, \"y\": 20}, {\"x\": 85, \"y\": 25}, {\"x\": 50, \"y\": 40}, {\"x\": 20, \"y\": 60}, {\"x\": 40, \"y\": 65}, {\"x\": 60, \"y\": 65}, {\"x\": 80, \"y\": 60}, {\"x\": 50, \"y\": 90}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 8,
+    "fields": {
+      "nome": "4-3-3 (Ataque)",
+      "estilo": "Ofensiva",
+      "dificuldade": 3,
+      "descricao": "Variação ofensiva do 4-3-3",
+      "categoria": "Ofensivas",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 15, \"y\": 25}, {\"x\": 35, \"y\": 20}, {\"x\": 65, \"y\": 20}, {\"x\": 85, \"y\": 25}, {\"x\": 30, \"y\": 45}, {\"x\": 50, \"y\": 50}, {\"x\": 70, \"y\": 45}, {\"x\": 15, \"y\": 85}, {\"x\": 50, \"y\": 90}, {\"x\": 85, \"y\": 85}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 9,
+    "fields": {
+      "nome": "3-4-3",
+      "estilo": "Muito Ofensiva",
+      "dificuldade": 4,
+      "descricao": "Formação ultra ofensiva com três zagueiros",
+      "categoria": "Ofensivas",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 25, \"y\": 20}, {\"x\": 50, \"y\": 15}, {\"x\": 75, \"y\": 20}, {\"x\": 15, \"y\": 50}, {\"x\": 40, \"y\": 55}, {\"x\": 60, \"y\": 55}, {\"x\": 85, \"y\": 50}, {\"x\": 20, \"y\": 85}, {\"x\": 50, \"y\": 90}, {\"x\": 80, \"y\": 85}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 10,
+    "fields": {
+      "nome": "3-5-2",
+      "estilo": "Ofensiva",
+      "dificuldade": 4,
+      "descricao": "Formação ofensiva com alas",
+      "categoria": "Ofensivas",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 25, \"y\": 20}, {\"x\": 50, \"y\": 15}, {\"x\": 75, \"y\": 20}, {\"x\": 10, \"y\": 50}, {\"x\": 35, \"y\": 55}, {\"x\": 50, \"y\": 60}, {\"x\": 65, \"y\": 55}, {\"x\": 90, \"y\": 50}, {\"x\": 35, \"y\": 85}, {\"x\": 65, \"y\": 85}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 11,
+    "fields": {
+      "nome": "4-1-2-1-2",
+      "estilo": "Ofensiva",
+      "dificuldade": 4,
+      "descricao": "Formação em diamante no meio-campo",
+      "categoria": "Ofensivas",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 15, \"y\": 25}, {\"x\": 35, \"y\": 20}, {\"x\": 65, \"y\": 20}, {\"x\": 85, \"y\": 25}, {\"x\": 50, \"y\": 40}, {\"x\": 30, \"y\": 60}, {\"x\": 70, \"y\": 60}, {\"x\": 50, \"y\": 75}, {\"x\": 35, \"y\": 90}, {\"x\": 65, \"y\": 90}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 12,
+    "fields": {
+      "nome": "3-4-1-2",
+      "estilo": "Especial",
+      "dificuldade": 4,
+      "descricao": "Formação com meia-atacante",
+      "categoria": "Especiais",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 25, \"y\": 20}, {\"x\": 50, \"y\": 15}, {\"x\": 75, \"y\": 20}, {\"x\": 15, \"y\": 50}, {\"x\": 40, \"y\": 55}, {\"x\": 60, \"y\": 55}, {\"x\": 85, \"y\": 50}, {\"x\": 50, \"y\": 75}, {\"x\": 35, \"y\": 90}, {\"x\": 65, \"y\": 90}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 13,
+    "fields": {
+      "nome": "5-2-1-2",
+      "estilo": "Especial",
+      "dificuldade": 4,
+      "descricao": "Formação defensiva com contra-ataque",
+      "categoria": "Especiais",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 10, \"y\": 25}, {\"x\": 30, \"y\": 20}, {\"x\": 50, \"y\": 15}, {\"x\": 70, \"y\": 20}, {\"x\": 90, \"y\": 25}, {\"x\": 35, \"y\": 50}, {\"x\": 65, \"y\": 50}, {\"x\": 50, \"y\": 70}, {\"x\": 35, \"y\": 90}, {\"x\": 65, \"y\": 90}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 14,
+    "fields": {
+      "nome": "4-4-1-1",
+      "estilo": "Especial",
+      "dificuldade": 3,
+      "descricao": "Formação com segundo atacante",
+      "categoria": "Especiais",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 15, \"y\": 25}, {\"x\": 35, \"y\": 20}, {\"x\": 65, \"y\": 20}, {\"x\": 85, \"y\": 25}, {\"x\": 20, \"y\": 50}, {\"x\": 40, \"y\": 55}, {\"x\": 60, \"y\": 55}, {\"x\": 80, \"y\": 50}, {\"x\": 50, \"y\": 75}, {\"x\": 50, \"y\": 90}]"
+    }
+  },
+  {
+    "model": "api.formacao",
+    "pk": 15,
+    "fields": {
+      "nome": "3-4-2-1",
+      "estilo": "Especial",
+      "dificuldade": 4,
+      "descricao": "Formação com dois meias-atacantes",
+      "categoria": "Especiais",
+      "posicoes": "[{\"x\": 50, \"y\": 5}, {\"x\": 25, \"y\": 20}, {\"x\": 50, \"y\": 15}, {\"x\": 75, \"y\": 20}, {\"x\": 15, \"y\": 50}, {\"x\": 40, \"y\": 55}, {\"x\": 60, \"y\": 55}, {\"x\": 85, \"y\": 50}, {\"x\": 35, \"y\": 75}, {\"x\": 65, \"y\": 75}, {\"x\": 50, \"y\": 90}]"
+    }
+  }
+]
